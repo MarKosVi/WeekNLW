@@ -9,6 +9,7 @@
     --paragrph: hsla(210, 9%, 31%, 1);
     --brand-light: hsla(148, 23%, 89%, 1);
     --brand-beige:  hsla(39, 100%, 97%, 1);
+    --nav-height: 7.2rem;
 
 
 
@@ -19,58 +20,56 @@ body {
     font-family: 'DM Sans';
     font-size: 1.6rem;
     text-align: center;
-    background-color: var(--brand-light);
+
 }
+
+.wrapper {
+    width: 37.5rem;
+    margin-inline: auto;
+}
+
+
+/*================================ Header ===============================*/
 
 header {
-    width: 37.5rem;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 4.1rem;
+    margin-top: calc(4.1rem + var(--nav-height));
 
-}
-
-header img {
-    display: block;
-    margin-inline: auto;
-    object-position: 0 2rem;
-    width: 26.4rem;
 }
 
 header::before {
     content: "";
-    width: 4rem;
-    height: 4rem;
-    background-color: black;
+    width: 100vw;
+    height: calc(108rem + var(--nav-height)); 
+    background-color: var(--brand-light);
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
 }
 
-h4 {
+header h4 {
     font-size: 1.4rem;
     color: var(--primary-color);
     font-weight: bold;
     margin-bottom: 1.6rem;
 }
 
-h1 {
+header h1 {
     font-size: 3.4rem;
     color: var(--headline);
     line-height: 130%;
     margin-bottom: 2.4rem;
 }
 
-p {
+header p {
     font-size: 1.8rem;
     color: var(--paragrph);
     line-height: 150%;
     margin-bottom: 3.2rem;
 }
 
-button {
+header button {
     background-color: var(--primary-color);
     border-radius: 4rem;
     border: none;
@@ -88,6 +87,14 @@ button {
     margin-right: auto;
     margin-left: auto;
 }
+
+header img {
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+    width: 26.4rem;
+}
+
 
 .stats {
     width: 32.7rem;
@@ -123,3 +130,36 @@ button {
 } 
 
 
+
+/*============================= NAVIGATION ==================================*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.scroll {
+    background-color: var(--primary-color);
+    width: 100vw;
+    transition: .3s;
+
+}
+nav.scroll svg:nth-child(1) path {
+    fill: white;
+}
+
+nav.scroll svg:nth-child(2) path{
+    stroke: white;
+}
