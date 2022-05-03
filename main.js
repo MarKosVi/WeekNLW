@@ -1,7 +1,6 @@
 
 
-let nav = document.querySelector('nav');
-let scrolling = 0;
+let nav = document.querySelector('#navigation');
 window.addEventListener('scroll', ()=>{
-    window.scrollY != scrolling ? nav.setAttribute('class','scroll') : nav.removeAttribute('class', 'scroll');
+    window.scrollY > 0 ? nav.setAttribute('class','scroll') : nav.removeAttribute('class', 'scroll');
 });

@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -16,6 +17,12 @@
     font-size: 62.5%; /*1rem = 10px*/
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+
+}
+
 body {
     font-family: 'DM Sans';
     font-size: 1.6rem;
@@ -28,6 +35,9 @@ body {
     margin-inline: auto;
 }
 
+ul{
+    list-style: none;
+}
 
 /*================================ Header ===============================*/
 
@@ -38,7 +48,7 @@ header {
 
 header::before {
     content: "";
-    width: 100vw;
+    width: 100%;
     height: calc(108rem + var(--nav-height)); 
     background-color: var(--brand-light);
     display: block;
@@ -162,4 +172,82 @@ nav.scroll svg:nth-child(1) path {
 
 nav.scroll svg:nth-child(2) path{
     stroke: white;
+}
+
+
+/*============================= Menu - Toggler ==================================*/
+
+
+body.menu-expanded {
+    overflow: hidden;
+}
+
+.menu, .close-menu,  body.menu-expanded .open-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+body.menu-expanded .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+body.menu-expanded nav {
+    position: relative;
+}
+
+.menu ul {
+    display: flex;
+    gap: 4.8rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.menu ul li a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.menu .button{
+    background-color: #ffff;
+    border-radius: 4rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+    justify-content: center;
 }
