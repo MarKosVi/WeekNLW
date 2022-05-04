@@ -16,6 +16,10 @@
     font-size: 62.5%; /*1rem = 10px*/
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -34,6 +38,7 @@ body {
 .wrapper {
     width: 37.5rem;
     margin-inline: auto;
+    padding-inline: 2.4rem;
 }
 
 section {
@@ -44,14 +49,14 @@ ul{
     list-style: none;
 }
 
-/*================================ Header ===============================*/
+/*================================ Home ===============================*/
 
-header {
-    margin-top: calc(4.1rem + var(--nav-height));
+#home {
+    padding-top: calc(4.1rem + var(--nav-height));
 
 }
 
-header::before {
+#home ::before {
     content: "";
     width: 100%;
     height: calc(108rem + var(--nav-height)); 
@@ -63,28 +68,28 @@ header::before {
     z-index: -1;
 }
 
-header h4 {
+#home h4 {
     font-size: 1.4rem;
     color: var(--primary-color);
     font-weight: bold;
     margin-bottom: 1.6rem;
 }
 
-header h1 {
+#home h1 {
     font-size: 3.4rem;
     color: var(--headline);
     line-height: 130%;
     margin-bottom: 2.4rem;
 }
 
-header p {
+#home p {
     font-size: 1.8rem;
     color: var(--paragrph);
     line-height: 150%;
     margin-bottom: 3.2rem;
 }
 
-header button {
+#home button {
     background-color: var(--primary-color);
     border-radius: 4rem;
     border: none;
@@ -103,7 +108,7 @@ header button {
     margin-left: auto;
 }
 
-header img {
+#home img {
     display: block;
     margin-inline: auto;
     object-position: 0 2rem;
@@ -111,7 +116,7 @@ header img {
 }
 
 
-.stats {
+#home .stats {
     width: 32.7rem;
     height: 47rem;
     margin-inline: auto;
@@ -126,22 +131,19 @@ header img {
 
 }
 
-.stat h3 {
+#home .stat h3 {
     font-size: 4.8rem;
     font-weight: 700;
     color: var(--headline);
     line-height: 130%;
     margin-bottom: .4rem;
-
-
 }
 
-.stat p {
+#home .stat p {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.6rem;
     line-height: 150%;
-    
 } 
 
 
@@ -150,13 +152,11 @@ header img {
 
 nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     height: var(--nav-height);
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100vw;
+    z-index: 100;
 }
 
 nav .wrapper {
@@ -167,11 +167,9 @@ nav .wrapper {
 
 nav.scroll {
     background-color: var(--primary-color);
-    width: 100vw;
-    transition: .3s;
-
 }
-nav.scroll svg:nth-child(1) path {
+
+nav.scroll .logo path {
     fill: white;
 }
 
@@ -183,7 +181,6 @@ nav button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 3rem;
 }
 
 /*============================= Menu - Toggler ==================================*/
@@ -194,7 +191,7 @@ body.menu-expanded {
 }
 
 body.menu-expanded > :not(nav){
-    display: none;
+    visibility: hidden;
 }
 
 .menu, .close-menu,  body.menu-expanded .open-menu {
@@ -208,6 +205,10 @@ body.menu-expanded .close-menu{
     visibility: visible;
 }
 
+.menu {
+    transform: translateY(100%);
+}
+
 
 body.menu-expanded .menu {
     position: fixed;
@@ -217,10 +218,8 @@ body.menu-expanded .menu {
     width: 100vw;
     height: 100vh;
     padding-top: var(--nav-height);
-}
-
-body.menu-expanded nav {
-    position: relative;
+    transition: transform 200ms;
+    transform: translateY(0);
 }
 
 .menu ul {
