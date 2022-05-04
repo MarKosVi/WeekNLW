@@ -27,6 +27,7 @@ body {
     font-family: 'DM Sans';
     font-size: 1.6rem;
     text-align: center;
+    overflow: overlay;
 
 }
 
@@ -170,16 +171,26 @@ nav.scroll svg:nth-child(1) path {
     fill: white;
 }
 
-nav.scroll svg:nth-child(2) path{
+nav.scroll button path{
     stroke: white;
 }
 
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 3rem;
+}
 
 /*============================= Menu - Toggler ==================================*/
 
 
 body.menu-expanded {
     overflow: hidden;
+}
+
+body.menu-expanded > :not(nav){
+    display: none;
 }
 
 .menu, .close-menu,  body.menu-expanded .open-menu {
@@ -201,6 +212,7 @@ body.menu-expanded .menu {
     background-color: var(--primary-color);
     width: 100vw;
     height: 100vh;
+    padding-top: var(--nav-height);
 }
 
 body.menu-expanded nav {
@@ -250,4 +262,18 @@ body.menu-expanded nav {
     gap: 3.2rem;
     align-items: center;
     justify-content: center;
+}
+
+body.menu-expanded .logo, 
+body.menu-expanded nav button {
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .logo path {
+    fill: white;
+}
+
+body.menu-expanded button path{
+    stroke: white;
 }
