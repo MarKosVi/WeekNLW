@@ -10,10 +10,9 @@
     --paragrph: hsla(210, 9%, 31%, 1);
     --brand-light: hsla(148, 23%, 89%, 1);
     --brand-beige:  hsla(39, 100%, 97%, 1);
+    --bg-light: hsla(180, 14%, 97%, 1);
+
     --nav-height: 7.2rem;
-
-
-
     font-size: 62.5%; /*1rem = 10px*/
 }
 
@@ -28,12 +27,17 @@ body {
     font-size: 1.6rem;
     text-align: center;
     overflow: overlay;
+    background-color: var(--bg-light);
 
 }
 
 .wrapper {
     width: 37.5rem;
     margin-inline: auto;
+}
+
+section {
+    padding-block: 10rem;
 }
 
 ul{
@@ -277,3 +281,45 @@ body.menu-expanded .logo path {
 body.menu-expanded button path{
     stroke: white;
 }
+
+
+
+
+/*============================= Services ==================================*/
+
+#services header h4{
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+#services header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--headline);
+    margin-bottom: 6rem;
+}
+
+#services .cards{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    
+}
+
+#services .card {
+    padding: 2.4rem;
+    text-align: left;
+    background: #ffff;
+    border: 1px solid var(--brand-light);
+    border-radius: .6rem;
+
+} 
+
+#services .card h3 {
+    margin-block: 1.6rem;
+}
+
