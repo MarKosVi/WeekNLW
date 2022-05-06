@@ -103,7 +103,6 @@ section .content p{
     gap: 1.6rem;
     text-decoration: none;
     transition: background .2s;
-
 }
 
 
@@ -119,7 +118,7 @@ section .content p{
 #backToTopButton circle {
     fill: var(--primary-color);
 }
-
+body.menu-expanded #navigation .logo path[fill*="#00856F"],
 #navigation.scroll .logo path[fill*="#00856F"] {
     fill: #ffff;
 }
