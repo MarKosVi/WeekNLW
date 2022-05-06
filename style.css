@@ -383,7 +383,7 @@ body.menu-expanded button path{
     flex-direction: column;
     gap: 1.6rem;
     margin-bottom: 3.2rem;
-    
+
 }
 
 #contact ul li {
@@ -392,3 +392,18 @@ body.menu-expanded button path{
     gap: .8rem;
 }
 
+/*================================== Footer ========================================*/
+
+footer {
+    background-color: var(--primary-color);
+    padding-block: 6rem;
+    color: #ffff;
+}
+
+footer path {
+    fill: white;
+}
+
+footer path{
+    stroke: white;
+}
