@@ -15,16 +15,16 @@ openMenu.addEventListener('click', ()=>{
 closeMenu.addEventListener('click', btCloseMenu);
 
 window.addEventListener('scroll', ()=>{
-    scrollScrean();
-    scrollButton();
+    showNavOnScroll();
+    showButtonOnScroll();
 });
 
-function scrollScrean() {
+function showNavOnScroll() {
     window.scrollY > 0 ? nav.setAttribute('class','scroll') : nav.removeAttribute('class', 'scroll');
 }
 
-function scrollButton() {
-    window.scrollY > 0 ? backToTop.setAttribute('class','show') : backToTop.removeAttribute('class', 'show');
+function showButtonOnScroll() {
+    window.scrollY > 360 ? backToTop.setAttribute('class','show') : backToTop.removeAttribute('class', 'show');
 }
 
 btNavegationMenu.forEach(item=>{
