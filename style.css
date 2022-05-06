@@ -397,13 +397,50 @@ body.menu-expanded button path{
 footer {
     background-color: var(--primary-color);
     padding-block: 6rem;
+    text-align: left;
     color: #ffff;
 }
 
-footer path {
+footer .logo{
+    display: inline-block;
+    margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+    width: 23.6rem;
+    height: 3.1rem;
+}
+
+footer .logo path {
     fill: white;
 }
 
-footer path{
-    stroke: white;
+
+footer p {
+    color: var(--brand-beige);
+    line-height: 2;
+    margin-bottom: 3.2em;
+}
+
+footer .social-links{
+    justify-content: left;
+    
+}
+
+/*================================== Back to top button ========================================*/
+
+
+#backToTopButton {
+    position: fixed;
+    bottom: 2rem;
+    right: 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+
+}
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
 }
